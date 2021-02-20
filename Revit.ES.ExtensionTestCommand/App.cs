@@ -25,4 +25,10 @@ namespace Revit.ES.ExtensionTestCommand
             return Result.Succeeded;
         }
     }
+
+    public static class Utils
+    {
+        public const string specTypeIdPrefix = "autodesk.spec.aec";
+        public const string specTypeIdSuffix = "-2.0.0";
+    }
 }

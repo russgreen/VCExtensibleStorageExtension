@@ -16,7 +16,11 @@ namespace Revit.ES.ExtensionTestCommand
         [Field(Documentation = "Integer property")]
         public int Property2 { get; set; }
 
-        [Field(UnitType = UnitType.UT_Piping_Velocity)]        
+#if FORGETYPEID
+        [Field(SpecTypeId = Utils.specTypeIdPrefix + ".piping:velocity" + Utils.specTypeIdSuffix)]
+#else
+        [Field(UnitType = UnitType.UT_Piping_Velocity)] 
+#endif
         public double Property3 { get; set; }        
 
         [Field]

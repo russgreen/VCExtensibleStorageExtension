@@ -93,7 +93,11 @@ namespace Revit.ES.Extension
                 if (!string.IsNullOrEmpty(fieldAttribute.Documentation))
                     fieldBuilder.SetDocumentation(fieldAttribute.Documentation);
                 if (fieldBuilder.NeedsUnits())
+#if FORGETYPEID
+                    fieldBuilder.SetSpec(new Autodesk.Revit.DB.ForgeTypeId(fieldAttribute.SpecTypeId));
+#else
                     fieldBuilder.SetUnitType(fieldAttribute.UnitType);
+#endif
 
                 
             }

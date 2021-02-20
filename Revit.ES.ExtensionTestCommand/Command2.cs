@@ -42,7 +42,12 @@ namespace Revit.ES.ExtensionTestCommand
             intEntity.SomeValue = 777;
 
             // attach to the element
-            element.SetEntity(intEntity);
+            using (Transaction t = new Transaction(element.Document, "Set Entity"))
+            {
+                t.Start();
+                element.SetEntity(intEntity);
+                t.Commit();
+            }
 
 
             //read entity
@@ -73,7 +78,12 @@ namespace Revit.ES.ExtensionTestCommand
             entity.Set("SomeValue", 888);
 
             // 6. Attach entity to the element
-            element.SetEntity(entity);
+            using (Transaction t = new Transaction(element.Document, "Set Entity"))
+            {
+                t.Start();
+                element.SetEntity(entity);
+                t.Commit();
+            }
 
             // read
 
@@ -122,7 +132,12 @@ namespace Revit.ES.ExtensionTestCommand
 
             entity4.Set("MapField", mapOfEntities);
 
-            element.SetEntity(entity4);
+            using (Transaction t = new Transaction(element.Document, "Set Entity"))
+            {
+                t.Start();
+                element.SetEntity(entity4);
+                t.Commit();
+            }
 
 
             //Change value in map field
@@ -142,7 +157,12 @@ namespace Revit.ES.ExtensionTestCommand
                     // write changes = 
                     entity10.Set("MapField", mapField);
 
-                    element.SetEntity(entity10);
+                    using (Transaction t = new Transaction(element.Document, "Set Entity"))
+                    {
+                        t.Start();
+                        element.SetEntity(entity10);
+                        t.Commit();
+                    }
                 }
             }
 
@@ -157,8 +177,12 @@ namespace Revit.ES.ExtensionTestCommand
         {9, new IntEntity(){SomeValue = 9}},
         {10, new IntEntity(){SomeValue = 10}}
     };
-
-            element.SetEntity(complexEntity);
+            using (Transaction t = new Transaction(element.Document, "Set Entity"))
+            {
+                t.Start();
+                element.SetEntity(complexEntity);
+                t.Commit();
+            }
 
             //Change value in map field
             var complexEntity2 =
@@ -171,7 +195,12 @@ namespace Revit.ES.ExtensionTestCommand
                         complexEntity.MapField[9];
                     entityInMapField.SomeValue = 9898;
 
-                    element.SetEntity(complexEntity2);
+                    using (Transaction t = new Transaction(element.Document, "Set Entity"))
+                    {
+                        t.Start();
+                        element.SetEntity(complexEntity2);
+                        t.Commit();
+                    }
                 }
             }
 

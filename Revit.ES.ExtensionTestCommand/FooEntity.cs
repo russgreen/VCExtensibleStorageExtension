@@ -23,10 +23,18 @@ namespace Revit.ES.ExtensionTestCommand
         [Field(Documentation = "Byte Property")]
         public byte ByteProperty { get; set; }
 
+#if FORGETYPEID
+        [Field(Documentation = "Double Property", SpecTypeId = Utils.specTypeIdPrefix + ".electrical:cableTraySize" + Utils.specTypeIdSuffix)]
+#else
         [Field(Documentation = "Double Property", UnitType = UnitType.UT_Electrical_CableTraySize)]
+#endif
         public double DoubleProperty { get; set; }
 
+#if FORGETYPEID
+        [Field(Documentation = "Float Property", SpecTypeId = Utils.specTypeIdPrefix + ":number" + Utils.specTypeIdSuffix)]
+#else
         [Field(Documentation = "Float Property", UnitType = UnitType.UT_Number)]
+#endif
         public float FloatProperty { get; set; }
 
         [Field(Documentation = "Boolean Property")]
@@ -41,18 +49,26 @@ namespace Revit.ES.ExtensionTestCommand
         [Field(Documentation = "ElementId Property")]
         public ElementId ElementIdProperty { get; set; }
 
+#if FORGETYPEID
+        [Field(Documentation = "XYZ Property", SpecTypeId = Utils.specTypeIdPrefix + ":volume" + Utils.specTypeIdSuffix)]
+#else
         [Field(Documentation = "XYZ Property", UnitType = UnitType.UT_Volume)]
+#endif
         public XYZ XyzProperty { get; set; }
 
+#if FORGETYPEID
+        [Field(Documentation = "UV Property", SpecTypeId = Utils.specTypeIdPrefix + ".hvac:ductInsulationThickness" + Utils.specTypeIdSuffix)]
+#else
         [Field(Documentation = "UV Property", UnitType =  UnitType.UT_HVAC_DuctInsulationThickness)]
+#endif
         public UV UvProperty { get; set; }
 
         [Field]
         public DeepEntity DeepEntityProperty { get; set; }
 
-        #endregion
+#endregion
 
-        #region ArrayProperties
+#region ArrayProperties
         
 
         [Field(Documentation = "Int32 Collection Property")]
@@ -64,12 +80,20 @@ namespace Revit.ES.ExtensionTestCommand
         [Field(Documentation = "BindingList of Byte Property")]
         public BindingList<byte> ByteArrayProperty { get; set; }
 
-        [Field(Documentation = "ObservableCollection of Double Property", 
+        [Field(Documentation = "ObservableCollection of Double Property",
+#if FORGETYPEID
+            SpecTypeId = Utils.specTypeIdPrefix + ".hvac:temperature" + Utils.specTypeIdSuffix)]
+#else
             UnitType = UnitType.UT_HVAC_Temperature)]
+#endif
         public ObservableCollection<double> DoubleArrayProperty { get; set; }
 
         [Field(Documentation = "Float List Property",
+#if FORGETYPEID
+            SpecTypeId = Utils.specTypeIdPrefix + ".structural:force" + Utils.specTypeIdSuffix)]
+#else
             UnitType = UnitType.UT_Force)]
+#endif
         public List<float> FloatArrayProperty { get; set; }
 
         [Field(Documentation = "Boolean Property")]
@@ -85,11 +109,19 @@ namespace Revit.ES.ExtensionTestCommand
         public List<ElementId> ElementIdArrayProperty { get; set; }
 
         [Field(Documentation = "XYZ Property",
+#if FORGETYPEID
+            SpecTypeId = Utils.specTypeIdPrefix + ".piping:temperature" + Utils.specTypeIdSuffix)]
+#else
             UnitType = UnitType.UT_Piping_Temperature)]
+#endif
         public Collection<XYZ> XyzArrayProperty { get; set; }
 
         [Field(Documentation = "UV BindingList Property",
+#if FORGETYPEID
+            SpecTypeId = Utils.specTypeIdPrefix + ".energy:energy" + Utils.specTypeIdSuffix)]
+#else
             UnitType = UnitType.UT_HVAC_Energy)]
+#endif
         public BindingList<UV> UvArrayProperty { get; set; }
 
         [Field]
@@ -99,12 +131,16 @@ namespace Revit.ES.ExtensionTestCommand
 
 
         #region Map properties
-        
+
         /* The supported types for the keys are 
          * Boolean, Byte, Int16, Int32, ElementId, GUID and String. 
          */
 
+#if FORGETYPEID
+        [Field(SpecTypeId = Utils.specTypeIdPrefix + ".hvac:ductLiningThickness" + Utils.specTypeIdSuffix)]
+#else
         [Field(UnitType = UnitType.UT_HVAC_DuctLiningThickness)]
+#endif
         public Dictionary<bool, XYZ> BoolXyzMap { get; set; }
 
         [Field]
@@ -122,10 +158,14 @@ namespace Revit.ES.ExtensionTestCommand
         [Field]
         public Dictionary<Guid, DeepEntity> GuidDeepEntityMap { get; set; }
 
+#if FORGETYPEID
+        [Field(SpecTypeId = Utils.specTypeIdPrefix + ".electrical:demandFactor" + Utils.specTypeIdSuffix)]
+#else
         [Field(UnitType = UnitType.UT_Electrical_Demand_Factor)]
+#endif
         public SortedDictionary<string, double> StringDoubleMap { get; set; }
 
-        #endregion
+#endregion
 
         /// <summary>
         /// This property won't save in an Entity

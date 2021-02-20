@@ -18,10 +18,18 @@ namespace Revit.ES.Extension.Attributes
     {
         public FieldAttribute()
         {
+#if FORGETYPEID
+            SpecTypeId = "";
+#else
             UnitType = UnitType.UT_Undefined;
+#endif
         }
 
         public string Documentation { get; set; }
+#if FORGETYPEID
+        public string SpecTypeId { get; set; }
+#else
         public UnitType UnitType { get; set; }
+#endif
     }
 }

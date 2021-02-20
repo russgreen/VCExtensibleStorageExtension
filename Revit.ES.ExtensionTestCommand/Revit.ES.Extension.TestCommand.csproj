@@ -72,7 +72,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2021|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\Debug 2021\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;FORGETYPEID</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
@@ -101,7 +101,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2021|AnyCPU'">
     <OutputPath>bin\Release 2021\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>TRACE:FORGETYPEID</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -150,7 +150,7 @@
     <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2012\Revit.ES.ExtensionTestCommand.dll" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)Revit.ES.ExtensionTestCommand.addin" "$(AppData)\Autodesk\REVIT\Addins\2013"
-xcopy "$(TargetDir)*"  "$(AppData)\Autodesk\REVIT\Addins\2013\VCExStorageExtensions\"  /k /e /y</PostBuildEvent>
+    <PostBuildEvent>copy "$(ProjectDir)Revit.ES.ExtensionTestCommand.addin" "$(AppData)\Autodesk\REVIT\Addins\2021"
+xcopy "$(TargetDir)*"  "$(AppData)\Autodesk\REVIT\Addins\2021\VCExStorageExtensions\"  /k /e /y</PostBuildEvent>
   </PropertyGroup>
 </Project>

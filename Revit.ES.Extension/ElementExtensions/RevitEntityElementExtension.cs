@@ -87,7 +87,11 @@ namespace Revit.ES.Extension.ElementExtensions
         public static void SetWrapper<T>(this Entity entity, 
             Field field, 
             IList<T> value, 
+#if FORGETYPEID
+            ForgeTypeId displayUnitType)
+#else
             DisplayUnitType displayUnitType)
+#endif
         {
             entity.Set(field, value, displayUnitType);
         }
@@ -102,7 +106,11 @@ namespace Revit.ES.Extension.ElementExtensions
         public static void SetWrapper<TKey, TValue>(this Entity entity,
             Field field,
             IDictionary<TKey, TValue> value, 
+#if FORGETYPEID
+            ForgeTypeId displayUnitType)
+#else
             DisplayUnitType displayUnitType)
+#endif
         {
             entity.Set(field, value, displayUnitType);
         }
