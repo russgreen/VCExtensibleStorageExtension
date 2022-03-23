@@ -1,166 +1,154 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>
-    </SchemaVersion>
+	<Configurations>2019;2020;2021;2022;2023</Configurations>
+	<Platforms>x64</Platforms>
     <ProjectGuid>{0949DEBE-12E7-4C38-9432-06490E022F86}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Revit.ES.Extension.TestCommand</RootNamespace>
-    <TargetFrameworkVersion Condition="$(Configuration.Contains('2019'))">v4.7.1</TargetFrameworkVersion>
-    <TargetFrameworkVersion Condition="$(Configuration.Contains('2020'))">v4.7.1</TargetFrameworkVersion>
-    <TargetFrameworkVersion Condition="$(Configuration.Contains('2021'))">v4.8</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <OldToolsVersion>3.5</OldToolsVersion>
-    <UpgradeBackupLocation />
-    <TargetFrameworkProfile />
+	<LangVersion>10</LangVersion>
   </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.Contains('2019'))">
-    <RevitPath>d:\Program Files\Autodesk\Revit 2019\</RevitPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.Contains('2020'))">
-    <RevitPath>c:\Program Files\Autodesk\Revit 2020\</RevitPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="$(Configuration.Contains('2021'))">
-    <RevitPath>c:\Program Files\Autodesk\Revit 2021\</RevitPath>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <StartAction>Program</StartAction>
-    <StartProgram>$(ProgramFiles)\Autodesk\Revit Architecture 2012\Program\Revit.exe</StartProgram>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>..\bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-    <StartAction>Program</StartAction>
-    <StartProgram>$(ProgramFiles)\Autodesk\Revit Architecture 2012\Program\Revit.exe</StartProgram>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug 2019|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\2019\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2020|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug 2020\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug 2021|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\Debug 2021\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;FORGETYPEID</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyName>Revit.ES.Extension.TestCommand</AssemblyName>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2019|AnyCPU'">
-    <OutputPath>bin\Release 2019\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2020|AnyCPU'">
-    <OutputPath>bin\Release 2020\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2021|AnyCPU'">
-    <OutputPath>bin\Release 2021\</OutputPath>
-    <DefineConstants>TRACE:FORGETYPEID</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release 2022|AnyCPU'">
-    <OutputPath>bin\Release 2022\</OutputPath>
-    <DefineConstants>TRACE:FORGETYPEID</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <LangVersion>7.3</LangVersion>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="RevitAPI">
-      <HintPath>$(RevitPath)RevitAPI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="RevitAPIUI">
-      <HintPath>$(RevitPath)RevitAPIUI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Core" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="App.cs" />
-    <Compile Include="Command.cs" />
-    <Compile Include="Command2.cs" />
-    <Compile Include="FooEntity.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BarEntity.cs" />
-    <Compile Include="DeepEntity.cs" />
-    <Compile Include="Simple\ComplexEntity.cs" />
-    <Compile Include="Simple\IntEntity.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Revit.ES.ExtensionTestCommand.addin" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Lib\Revit.ES.Extension.dll" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Revit.ES.Extension\Revit.ES.Extension.csproj">
-      <Project>{2def625f-1b50-4ac3-8364-999f1861d471}</Project>
-      <Name>Revit.ES.Extension</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="AfterClean">
-    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2012\Revit.ES.ExtensionTestCommand.addin" />
-    <Delete Files="$(AppData)\Autodesk\REVIT\Addins\2012\Revit.ES.ExtensionTestCommand.dll" />
-  </Target>
-  <PropertyGroup>
-    <PostBuildEvent>copy "$(ProjectDir)Revit.ES.ExtensionTestCommand.addin" "$(AppData)\Autodesk\REVIT\Addins\2021"
-xcopy "$(TargetDir)*"  "$(AppData)\Autodesk\REVIT\Addins\2021\VCExStorageExtensions\"  /k /e /y</PostBuildEvent>
-  </PropertyGroup>
+
+	<PropertyGroup>
+		<!--Used to allow version wildcards-->
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<Deterministic>False</Deterministic>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="$(Configuration.Contains('2019'))">
+		<TargetFramework>net47</TargetFramework>
+		<RevitVersion>2019</RevitVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="$(Configuration.Contains('2020'))">
+		<TargetFramework>net471</TargetFramework>
+		<RevitVersion>2020</RevitVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="$(Configuration.Contains('2021'))">
+		<TargetFramework>net48</TargetFramework>
+		<RevitVersion>2021</RevitVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="$(Configuration.Contains('2022'))">
+		<TargetFramework>net48</TargetFramework>
+		<RevitVersion>2022</RevitVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="$(Configuration.Contains('2023'))">
+		<TargetFramework>net48</TargetFramework>
+		<RevitVersion>2023</RevitVersion>
+	</PropertyGroup>
+
+
+	
+	<PropertyGroup>
+		<ErrorReport>prompt</ErrorReport>
+		<CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(RevitVersion)' &lt;= '2020'">
+		<DefineConstants>DEBUG;REVIT$(RevitVersion);</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(RevitVersion)' &gt;= '2021'">
+		<DefineConstants>DEBUG;REVIT$(RevitVersion);FORGETYPEID</DefineConstants>
+	</PropertyGroup>
+	
+	<PropertyGroup>
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<!-- Force the project to use the legacy debugger engine 
+		<DebugEngines>{351668CC-8477-4fbf-BFE3-5F1006E4DB1F}</DebugEngines>-->
+
+		<!-- Define handy symbols to use in the code in order to accommodate different Revit versions,
+        e.g. by wrapping legacy / deprecated API calls with #if REVIT2014 | REVIT2015 
+		<DefineConstants>DEBUG;REVIT$(Configuration)</DefineConstants>-->
+		<PreprocessorDefinitions>$(DefineConstants)</PreprocessorDefinitions>
+
+		<!-- Override 'OutputPath'  -->
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>bin\$(RevitVersion)</OutputPath>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Revit.ES.Extension\Revit.ES.Extension.csproj" />
+	</ItemGroup>
+	
+	<PropertyGroup>
+		<RevitPath>c:\Program Files\Autodesk\Revit $(RevitVersion)\</RevitPath>
+	</PropertyGroup>	
+
+	<ItemGroup>
+		<Reference Include="RevitAPI">
+			<HintPath>$(RevitPath)RevitAPI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+		<Reference Include="RevitAPIUI">
+			<HintPath>$(RevitPath)RevitAPIUI.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="Revit.ES.ExtensionTestCommand.addin">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+
+	<!-- Clean up debug manifest -->
+	<Target Name="CleanupAddinManifest" AfterTargets="AfterClean">
+		<Delete Files="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\Revit.ES.ExtensionTestCommand.addin" />
+	</Target>	
+	
+	<!-- Build debug manifest at build time -->
+	<Target Name="CreateAddinManifest" AfterTargets="AfterBuild">
+		<ItemGroup>
+			<AddinManifest Include="$(AppData)\Autodesk\REVIT\Addins\$(RevitVersion)\Revit.ES.ExtensionTestCommand.addin" />
+		</ItemGroup>
+		<ReplaceFileText InputFilename="Revit.ES.ExtensionTestCommand.addin" OutputFilename="@(AddinManifest)" MatchExpression="Assembly&gt;(.*?)&lt;" ReplacementText="Assembly&gt;$(TargetDir)$(AssemblyName).dll&lt;" />
+		<ReplaceFileText InputFilename="@(AddinManifest)" OutputFilename="@(AddinManifest)" MatchExpression="&lt;VendorId&gt;(.*?)&lt;" ReplacementText="&lt;VendorId&gt;$(PackageId)&lt;" />
+		<!--<ReplaceFileText InputFilename="@(AddinManifest)" OutputFilename="@(AddinManifest)" MatchExpression="&lt;FullClassName&gt;(.*?)&lt;" ReplacementText="&lt;FullClassName&gt;$(RootNamespace).App&lt;" />-->
+	</Target>
+	
+	<UsingTask Condition="'$(MSBuildRuntimeType)' == 'Full'" TaskName="ReplaceFileText" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+		<ParameterGroup>
+			<InputFilename ParameterType="System.String" Required="true" />
+			<OutputFilename ParameterType="System.String" Required="true" />
+			<MatchExpression ParameterType="System.String" Required="true" />
+			<ReplacementText ParameterType="System.String" Required="true" />
+		</ParameterGroup>
+		<Task>
+			<Reference Include="System.Core" />
+			<Using Namespace="System" />
+			<Using Namespace="System.IO" />
+			<Using Namespace="System.Text.RegularExpressions" />
+			<Code Type="Fragment" Language="cs">
+				<![CDATA[
+              File.WriteAllText(OutputFilename,Regex.Replace(File.ReadAllText(InputFilename),MatchExpression,ReplacementText));
+        ]]>
+			</Code>
+		</Task>
+	</UsingTask>
+
+	<UsingTask Condition="'$(MSBuildRuntimeType)' == 'Core'" TaskName="ReplaceFileText" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+		<ParameterGroup>
+			<InputFilename ParameterType="System.String" Required="true" />
+			<OutputFilename ParameterType="System.String" Required="true" />
+			<MatchExpression ParameterType="System.String" Required="true" />
+			<ReplacementText ParameterType="System.String" Required="true" />
+		</ParameterGroup>
+		<Task>
+			<Using Namespace="System" />
+			<Using Namespace="System.IO" />
+			<Using Namespace="System.Text.RegularExpressions" />
+			<Code Type="Fragment" Language="cs">
+				<![CDATA[
+              File.WriteAllText(OutputFilename,Regex.Replace(File.ReadAllText(InputFilename),MatchExpression,ReplacementText));
+        ]]>
+			</Code>
+		</Task>
+	</UsingTask>
+
+	
 </Project>
