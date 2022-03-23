@@ -10,11 +10,10 @@
 
 using Autodesk.Revit.DB.ExtensibleStorage;
 
-namespace Revit.ES.Extension
+namespace Revit.ES.Extension;
+
+public interface IEntityConverter
 {
-    public interface IEntityConverter
-    {
-        Entity Convert(IRevitEntity revitEntity);
-        TRevitEntity Convert<TRevitEntity>(Entity entity) where TRevitEntity : class, IRevitEntity;
-    }
+    Entity Convert(IRevitEntity revitEntity);
+    TRevitEntity Convert<TRevitEntity>(Entity entity) where TRevitEntity : class, IRevitEntity;
 }

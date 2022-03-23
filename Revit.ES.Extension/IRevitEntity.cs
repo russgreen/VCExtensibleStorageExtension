@@ -8,10 +8,9 @@
  * 
  */
 
-namespace Revit.ES.Extension
+namespace Revit.ES.Extension;
+
+public interface IRevitEntity
 {
-    public interface IRevitEntity
-    {
-       
-    }       
-}
+   
+}       

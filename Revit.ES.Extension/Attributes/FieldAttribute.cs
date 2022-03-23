@@ -11,25 +11,24 @@
 using System;
 using Autodesk.Revit.DB;
 
-namespace Revit.ES.Extension.Attributes
-{
-    [AttributeUsage(AttributeTargets.Property)]
-    public class FieldAttribute : Attribute
-    {
-        public FieldAttribute()
-        {
-#if FORGETYPEID
-            SpecTypeId = "";
-#else
-            UnitType = UnitType.UT_Undefined;
-#endif
-        }
+namespace Revit.ES.Extension.Attributes;
 
-        public string Documentation { get; set; }
+[AttributeUsage(AttributeTargets.Property)]
+public class FieldAttribute : Attribute
+{
+    public FieldAttribute()
+    {
 #if FORGETYPEID
-        public string SpecTypeId { get; set; }
+        SpecTypeId = "";
 #else
-        public UnitType UnitType { get; set; }
+        UnitType = UnitType.UT_Undefined;
 #endif
     }
+
+    public string Documentation { get; set; }
+#if FORGETYPEID
+    public string SpecTypeId { get; set; }
+#else
+    public UnitType UnitType { get; set; }
+#endif
 }

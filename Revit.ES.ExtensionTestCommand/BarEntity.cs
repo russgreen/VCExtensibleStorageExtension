@@ -3,34 +3,33 @@ using Revit.ES.Extension;
 using Revit.ES.Extension.Attributes;
 using Autodesk.Revit.DB;
 
-namespace Revit.ES.ExtensionTestCommand
-{
-    [Schema("0488C456-66B2-445F-817C-34C1A4DF4546",
-        "TestEntitySchema",
-        Documentation = "Provide entity for test command")]
-    public class BarEntity : IRevitEntity
-    {
-        [Field(Documentation = "Field store some string property")]
-        public string Property1 { get; set; }
+namespace Revit.ES.ExtensionTestCommand;
 
-        [Field(Documentation = "Integer property")]
-        public int Property2 { get; set; }
+[Schema("0488C456-66B2-445F-817C-34C1A4DF4546",
+    "TestEntitySchema",
+    Documentation = "Provide entity for test command")]
+public class BarEntity : IRevitEntity
+{
+    [Field(Documentation = "Field store some string property")]
+    public string Property1 { get; set; }
+
+    [Field(Documentation = "Integer property")]
+    public int Property2 { get; set; }
 
 #if FORGETYPEID
-        [Field(SpecTypeId = Utils.specTypeIdPrefix + ".piping:velocity" + Utils.specTypeIdSuffix)]
+    [Field(SpecTypeId = Utils.specTypeIdPrefix + ".piping:velocity" + Utils.specTypeIdSuffix)]
 #else
-        [Field(UnitType = UnitType.UT_Piping_Velocity)] 
+    [Field(UnitType = UnitType.UT_Piping_Velocity)] 
 #endif
-        public double Property3 { get; set; }        
+    public double Property3 { get; set; }        
 
-        [Field]
-        public DeepEntity SubEntity { get; set; }
+    [Field]
+    public DeepEntity SubEntity { get; set; }
 
-        [Field]
-        public List<int> ArrayField { get; set; }
+    [Field]
+    public List<int> ArrayField { get; set; }
 
-        [Field]
-        public List<DeepEntity> SubEntities { get; set; }
-        
-    }
+    [Field]
+    public List<DeepEntity> SubEntities { get; set; }
+    
 }

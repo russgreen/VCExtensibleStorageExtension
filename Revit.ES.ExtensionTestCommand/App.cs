@@ -9,26 +9,25 @@ using Autodesk.Revit.UI.Events;
 
 #endregion
 
-namespace Revit.ES.ExtensionTestCommand
+namespace Revit.ES.ExtensionTestCommand;
+
+class App : IExternalApplication
 {
-    class App : IExternalApplication
+    public Result OnStartup(UIControlledApplication a)
     {
-        public Result OnStartup(UIControlledApplication a)
-        {
-            
+        
 
-            return Result.Succeeded;
-        }
-
-        public Result OnShutdown(UIControlledApplication a)
-        {
-            return Result.Succeeded;
-        }
+        return Result.Succeeded;
     }
 
-    public static class Utils
+    public Result OnShutdown(UIControlledApplication a)
     {
-        public const string specTypeIdPrefix = "autodesk.spec.aec";
-        public const string specTypeIdSuffix = "-2.0.0";
+        return Result.Succeeded;
     }
+}
+
+public static class Utils
+{
+    public const string specTypeIdPrefix = "autodesk.spec.aec";
+    public const string specTypeIdSuffix = "-2.0.0";
 }

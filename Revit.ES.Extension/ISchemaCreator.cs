@@ -12,13 +12,12 @@ using System;
 using System.Collections.Generic;
 using Autodesk.Revit.DB.ExtensibleStorage;
 
-namespace Revit.ES.Extension
+namespace Revit.ES.Extension;
+
+/// <summary>
+/// Create an Autodesk Extensible storage schema from a type
+/// </summary>
+public interface ISchemaCreator
 {
-    /// <summary>
-    /// Create an Autodesk Extensible storage schema from a type
-    /// </summary>
-    public interface ISchemaCreator
-    {
-        Schema CreateSchema(Type type);
-    }
+    Schema CreateSchema(Type type);
 }
