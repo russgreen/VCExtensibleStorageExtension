@@ -26,8 +26,7 @@ internal class AttributeExtractor<TAttribute> where TAttribute : Attribute
         if (attributes.Length == 0)
             throw new InvalidOperationException(string.Format("MemberInfo {0} does not have a {1}", memberInfo, typeof(TAttribute)));
 
-        var atribute = attributes[0] as TAttribute;
-        if (atribute == null)
+        if (attributes[0] is not TAttribute atribute)
             throw new InvalidOperationException(string.Format("MemberInfo {0} does not have a {1}", memberInfo, typeof(TAttribute)));
 
         return atribute;
