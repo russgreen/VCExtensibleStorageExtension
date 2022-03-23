@@ -75,7 +75,8 @@
 	</ItemGroup>
 	
 	<PropertyGroup>
-		<RevitPath>c:\Program Files\Autodesk\Revit $(RevitVersion)\</RevitPath>
+		<!--<RevitPath>c:\Program Files\Autodesk\Revit $(RevitVersion)\</RevitPath>-->
+		<RevitPath>..\..\RevitAPI\$(RevitVersion)\</RevitPath>
 	</PropertyGroup>	
 
 	<ItemGroup>

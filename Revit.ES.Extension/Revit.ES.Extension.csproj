@@ -39,7 +39,8 @@
 	</PropertyGroup>
 	<PropertyGroup Condition="$(Configuration.Contains('2023'))">
 		<TargetFramework>net48</TargetFramework>
-		<RevitPath>c:\Program Files\Autodesk\Revit 2023\</RevitPath>
+		<!--<RevitPath>c:\Program Files\Autodesk\Revit 2023\</RevitPath>-->
+		<RevitPath>..\..\RevitAPI\2023\</RevitPath>
 	</PropertyGroup>
 
 	<PropertyGroup>
